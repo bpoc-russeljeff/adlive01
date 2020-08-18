@@ -5070,7 +5070,7 @@ html,body {
   background-position: center center !important;
 }
 .p_fixed#bg1 {
-  background: url(../img/1.png) no-repeat 50% 0 fixed !important;
+  background: url(../img/section_1_bg.png) no-repeat 50% 0 !important;
   background-size: cover !important;
 }
 .p_fixed#bg2 {
