@@ -1,376 +1,1236 @@
 <!DOCTYPE html>
+
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta http-equiv="Content-Style-Type" content="text/css">
-<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width,initial-scale=1">
-<script>
-var ua = navigator.userAgent.toLowerCase();
-var isiOS = (ua.indexOf('iphone') > -1) || (ua.indexOf('ipad') > -1);
-if(isiOS) {
-  var viewport = document.querySelector('meta[name="viewport"]');
-  if(viewport) {
-    var viewportContent = viewport.getAttribute('content');
-    viewport.setAttribute('content', viewportContent + ', user-scalable=no');
-  }
-}
-</script>
-<title></title>
-<meta name="keywords" content=",," />
-<meta name="description" content="" />
-<!-- Google Tag Manager -->
-<!-- End Google Tag Manager -->
-<!--[if lt IE 9]>
-<script src="js/html5shiv.js"></script>
-<![endif]-->
-<!-- CSS読込 -->
-<link rel="stylesheet" href="css/base.css" type="text/css" />
-<link href="js/slick.css" rel="stylesheet" type="text/css">
-<link href="js/slick-theme.css" rel="stylesheet" type="text/css">
-<link href="js/mega.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<!-- ファビコン読込 -->
-<link rel="shortcut icon" href="img/favicon.ico" />
-<meta http-equiv="imagetoolbar" content="no">
-<!-- 検索有無設定 -->
-<meta name="robots" content="nofollow" />
-<!-- googlefont -->
-<link href='https://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
-<!-- jquery読込 -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="js/easy-rollover.js"></script>
-<script src="https://use.typekit.net/zzb5mon.js"></script>
-<script src="js/modernizr-2.8.3.min.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
-<script type="text/javascript" src="js/slick.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/modal.js"></script>
-<script type="text/javascript" src="js/base-color.js"></script>
-<!-- スクロール滑らかさ -->
-<script type="text/javascript" src="js/jquery.easeScroll.js"></script>
-<script type="text/javascript" src="js/esInner.js"></script>
-<!-- highlight.js -->
-<link rel="stylesheet" href="css/highlight.css" type="text/css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<!-- fullpage.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.css"rel="stylesheet"type="text/css">
-<!-- スムーススクロール -->
-<script>
-$(function(){
-   $('a[href^="#"]').on('click', function(){
-      var speed = 1000;
-      var href= $(this).attr('href');
-      var target = $(href == '#' || href == '' ? 'html' : href);
-      var position = target.offset().top;
-      $('body,html').animate({scrollTop:position}, speed, 'swing');
-      return false;
-   });
-});
-</script>
-<!-- へッダー消し -->
-<script type="text/javascript">
-$(window).scroll(function() {
-top_menu = $('header');
-if(($(document).height() - ($(window).height() + $(window).scrollTop()))/$(document).height() < 0.12){
-top_menu.fadeOut();
-}else{
-top_menu.fadeIn();
-}
-});
-</script>
-<style id='base_val' type='text/css'></style>
-<style type='text/css'>
-table {
-    margin: auto;
-}
-/*表示切替*/
-html body .view_pc {
-    display: block !important;
-}
-html body table.view_pc {
-    display: table !important;
-}
-html body table.view_pc tr {
-    display: table !important;
-}
-html body table.view_pc th {
-    display: table !important;
-}
-html body table.view_pc td {
-    display: table !important;
-}
-html body .view_pctab {
-    display: block !important;
-}
-html body table.view_pctab {
-    display: table !important;
-}
-html body table.view_pctab tr {
-    display: table !important;
-}
-html body table.view_pctab th {
-    display: table !important;
-}
-html body table.view_pctab td {
-    display: table !important;
-}
-html body .view_tab {
-    display: none !important;
-}
-html body .view_sp {
-    display: none !important;
-}
-html body .view_tabsp {
-    display: none !important;
-}
-@media only screen
-and (max-width: 1050px){
-html body .view_pc {
-    display: none !important;
-}
-html body .view_pctab {
-    display: block !important;
-}
-html body table.view_pctab {
-    display: table !important;
-}
-html body table.view_pctab tr {
-    display: table !important;
-}
-html body table.view_pctab th {
-    display: table !important;
-}
-html body table.view_pctab td {
-    display: table !important;
-}
-html body .view_tab {
-    display: block !important;
-}
-html body table.view_tab {
-    display: table !important;
-}
-html body table.view_tab tr {
-    display: table !important;
-}
-html body table.view_tab th {
-    display: table !important;
-}
-html body table.view_tab td {
-    display: table !important;
-}
-html body .view_sp {
-    display: none !important;
-}
-html body .view_tabsp {
-    display: block !important;
-}
-html body table.view_tabsp {
-    display: table !important;
-}
-html body table.view_tabsp tr {
-    display: table !important;
-}
-html body table.view_tabsp th {
-    display: table !important;
-}
-html body table.view_tabsp td {
-    display: table !important;
-}
-}
-@media only screen
-and (max-width: 770px){
-html body .view_pc {
-    display: none !important;
-}
-html body .view_pctab {
-    display: none !important;
-}
-html body .view_tab {
-    display: none !important;
-}
-html body .view_sp {
-    display: block !important;
-}
-html body table.view_sp {
-    display: table !important;
-}
-html body table.view_sp tr {
-    display: table !important;
-}
-html body table.view_sp th {
-    display: table !important;
-}
-html body table.view_sp td {
-    display: table !important;
-}
-html body .view_tabsp {
-    display: block !important;
-}
-html body table.view_tabsp {
-    display: table !important;
-}
-html body table.view_tabsp tr {
-    display: table !important;
-}
-html body table.view_tabsp th {
-    display: table !important;
-}
-html body table.view_tabsp td {
-    display: table !important;
-}
-}
-/* エラーメッセージ　赤文字設定 */
-.error_msg {
-    color: #ff2e5a !important;
-}
-</style>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta name="viewport" content="target-densitydpi=device-dpi, user-scalable=no, width=device-width, initial-scale=1">
 
-</head>
+        <script>
+            var ua = navigator.userAgent.toLowerCase();
+            var isiOS = (ua.indexOf('iphone') > -1) || (ua.indexOf('ipad') > -1);
+            if(isiOS) {
+                var viewport = document.querySelector('meta[name="viewport"]');
+                if(viewport) {
+                    var viewportContent = viewport.getAttribute('content');
+                    viewport.setAttribute('content', viewportContent + ', user-scalable=no');
+                }
+            }
+        </script>
 
-<body>
-	<!-- ローディングアニメ -->
-	<div class="loader-wrap">
-		<div class="loader">Loading...</div>
-	</div>
-	<!-- ローディングアニメ -->
-	<header>
-	</header>
-	<main>
-		<section>
-		</section>
-		<section>
-		</section>
-		<section>
-		</section>
-	</main>
-	<footer>
-	</footer>
-</body>
+        <title></title>
+        <meta name="keywords" content=",," />
+        <meta name="description" content="" />
+        <!-- Google Tag Manager -->
+        <!-- End Google Tag Manager -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <![endif]-->
+        <!-- CSS読込 -->
+        <link rel="stylesheet" href="css/base.css" type="text/css" />
+        <link href="js/slick.css" rel="stylesheet" type="text/css">
+        <link href="js/slick-theme.css" rel="stylesheet" type="text/css">
+        <link href="js/mega.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <!-- ファビコン読込 -->
+        <link rel="shortcut icon" href="img/favicon.ico" />
+        <meta http-equiv="imagetoolbar" content="no">
+        <!-- 検索有無設定 -->
+        <meta name="robots" content="nofollow" />
+        <!-- googlefont -->
+        <link href='https://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+        <!-- jquery読込 -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/easy-rollover.js"></script>
+        <script src="https://use.typekit.net/zzb5mon.js"></script>
+        <script src="js/modernizr-2.8.3.min.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <script type="text/javascript" src="js/slick.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/modal.js"></script>
+        <script type="text/javascript" src="js/base-color.js"></script>
+        <!-- スクロール滑らかさ -->
+        <script type="text/javascript" src="js/jquery.easeScroll.js"></script>
+        <script type="text/javascript" src="js/esInner.js"></script>
+        <!-- highlight.js -->
+        <link rel="stylesheet" href="css/highlight.css" type="text/css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <!-- fullpage.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.5/fullpage.css"rel="stylesheet"type="text/css">
+        <!-- スムーススクロール -->
+        <script>
+            $(function(){
+                $('a[href^="#"]').on('click', function(){
+                    var speed = 1000;
+                    var href= $(this).attr('href');
+                    var target = $(href == '#' || href == '' ? 'html' : href);
+                    var position = target.offset().top;
+                    $('body,html').animate({scrollTop:position}, speed, 'swing');
+                    return false;
+                });
+            });
+        </script>
+        <!-- へッダー消し -->
+        <script type="text/javascript">
+            $(window).scroll(function() {
+                top_menu = $('header');
+                if(($(document).height() - ($(window).height() + $(window).scrollTop()))/$(document).height() < 0.12){
+                    top_menu.fadeOut();
+                }else{
+                    top_menu.fadeIn();
+                }
+            });
+        </script>
+        <style id='base_val' type='text/css'></style>
 
-<script type="text/javascript">
-	window.addEventListener('load', function() { 
-		// 通常
-		$('.rollover').easyRollover();
- 
-		// サフィックス
-		$('.rollover-suffix').easyRollover({
-			suffix: '_off.',
-			suffix_replace: '_on.'
-		});
- 
-		// 透過フェードするだけのロールオーバー
-		$('.rollover-fade1').easyRollover({
-			suffix: false,
-			transition: 'fade',
-			opacity: 0.2,
-			duration: 400
-		});
- 
-		// フェードして切り替わるロールオーバー
-		$('.rollover-fade2').easyRollover({
-			transition: 'fade',
-			duration: 1000,
-			easing: 'swing'
-		});
-	});
-</script>
+        <style type='text/css'>
+            table {
+                margin: auto;
+            }
+            /*表示切替*/
+            html body .view_pc {
+                display: block !important;
+            }
+            html body table.view_pc {
+                display: table !important;
+            }
+            html body table.view_pc tr {
+                display: table !important;
+            }
+            html body table.view_pc th {
+                display: table !important;
+            }
+            html body table.view_pc td {
+                display: table !important;
+            }
+            html body .view_pctab {
+                display: block !important;
+            }
+            html body table.view_pctab {
+                display: table !important;
+            }
+            html body table.view_pctab tr {
+                display: table !important;
+            }
+            html body table.view_pctab th {
+                display: table !important;
+            }
+            html body table.view_pctab td {
+                display: table !important;
+            }
+            html body .view_tab {
+                display: none !important;
+            }
+            html body .view_sp {
+                display: none !important;
+            }
+            html body .view_tabsp {
+                display: none !important;
+            }
 
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function(){
-  $('.menu > ul > li > ul:not(:has(ul))').addClass('normal-sub');
-  $(".menu > ul > li").hover(
-    function (e) {
-      if ($(window).width() > 1050) {
-        $(this).children("ul").fadeIn(150);
-        e.preventDefault();
-      }
-    }, function (e) {
-      if ($(window).width() > 1050) {
-        $(this).children("ul").fadeOut(150);
-        e.preventDefault();
-      }
-    }
-  );
-  $(".menu > ul > li").click(function() {
-    var thisMenu = $(this).children("ul");
-    var prevState = thisMenu.css('display');
-    $(".menu > ul > li > ul").fadeOut();
-    if ($(window).width() < 1051) {
-      if(prevState !== 'block')
-      thisMenu.fadeIn(150);
-    }
-  });
-  $(".navmenu_1 li a").click(function () {
-    $('.Toggle').toggleClass('active');
-    $(".menu-container").toggleClass('open');
-    $(".menu > ul").toggleClass('show-on-mobile');
-  });
-  $(".toform a").click(function () {
-    $('.Toggle').toggleClass('active');
-    $(".menu-container").toggleClass('open');
-    $(".menu > ul").toggleClass('show-on-mobile');
-  });
-  $(".Toggle").click(function (e) {
-    $('.Toggle').toggleClass('active');
-    $(".menu-container").toggleClass('open');
-    $(".menu > ul").toggleClass('show-on-mobile');
-    e.preventDefault();
-  });
-});
-</script>
+            @media only screen and (max-width: 1050px){
+                html body .view_pc {
+                    display: none !important;
+                }
+                html body .view_pctab {
+                    display: block !important;
+                }
+                html body table.view_pctab {
+                    display: table !important;
+                }
+                html body table.view_pctab tr {
+                    display: table !important;
+                }
+                html body table.view_pctab th {
+                    display: table !important;
+                }
+                html body table.view_pctab td {
+                    display: table !important;
+                }
+                html body .view_tab {
+                    display: block !important;
+                }
+                html body table.view_tab {
+                    display: table !important;
+                }
+                html body table.view_tab tr {
+                    display: table !important;
+                }
+                html body table.view_tab th {
+                    display: table !important;
+                }
+                html body table.view_tab td {
+                    display: table !important;
+                }
+                html body .view_sp {
+                    display: none !important;
+                }
+                html body .view_tabsp {
+                    display: block !important;
+                }
+                html body table.view_tabsp {
+                    display: table !important;
+                }
+                html body table.view_tabsp tr {
+                    display: table !important;
+                }
+                html body table.view_tabsp th {
+                    display: table !important;
+                }
+                html body table.view_tabsp td {
+                    display: table !important;
+                }
+            }
 
-<script type="text/javascript">
-	window.addEventListener('load', function(){ 
-		$('.navmenu_1 li a').click(function(){
-		$(this).toggleClass('open');
-			if ($(this).hasClass('open')) {
-				$(this).next('.navmenu_2').slideDown();
-				$('.navmenu_1 li a').not($(this)).removeClass('open');
-				$('.navmenu_2').not($(this).next('.navmenu_2')).slideUp();
-			} else {
-				$(this).removeClass('open'); //クラスを外す
-				$(this).next('.navmenu_2').slideUp();
-			}
-		});
-	});
-</script>
-<script type="text/javascript">
-//fullpage.jsの設定
-    var myFullpage = new fullpage('#fullpage', {
-      controlArrows: true,
-      verticalCentered: true,
-      resize: false,
-      scrollingSpeed: 700,
-      loopTop: true,
-      loopBottom: true,
-      loopHorizontal: true,
-      autoScrolling: true,
-      scrollBar: true,
-      anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', 'lastPage'],
-      menu: '#menu',
-      navigation: true,
-      navigationPosition: 'right',
-      navigationTooltips:  [],
-      showActiveTooltip: false,
-      slidesNavigation: true
+            @media only screen and (max-width: 770px){
+                html body .view_pc {
+                    display: none !important;
+                }
+                html body .view_pctab {
+                    display: none !important;
+                }
+                html body .view_tab {
+                    display: none !important;
+                }
+                html body .view_sp {
+                    display: block !important;
+                }
+                html body table.view_sp {
+                    display: table !important;
+                }
+                html body table.view_sp tr {
+                    display: table !important;
+                }
+                html body table.view_sp th {
+                    display: table !important;
+                }
+                html body table.view_sp td {
+                    display: table !important;
+                }
+                html body .view_tabsp {
+                    display: block !important;
+                }
+                html body table.view_tabsp {
+                    display: table !important;
+                }
+                html body table.view_tabsp tr {
+                    display: table !important;
+                }
+                html body table.view_tabsp th {
+                    display: table !important;
+                }
+                html body table.view_tabsp td {
+                    display: table !important;
+                }
+            }
+            /* エラーメッセージ　赤文字設定 */
+            .error_msg {
+                color: #ff2e5a !important;
+            }
+        </style>
+        
+        <link rel="stylesheet" href="css/main.css" type="text/css" />
+
+    </head>
+
+    <body>
+
+        <header class="bg_navy fixed_top">
+            <nav>
+                <div class="wrapper_100">
+                    <div class="cont_wrapper_75 flex">
+                        <div class="width_40">
+                            <a href="#">
+                                <img src="img/nav_logo.png">
+                            </a>
+                        </div>
+                        <div class="width_30"></div>
+                        <div class="width_20">
+                            <a href="#" class="nav_btn bg_yellow font_125">お問い合わせ</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero_section">
+                <img src="img/hero_img.png">
+            </section>
+
+            <!-- Services Section -->
+            <section class="service_section">
+                <div class="wrapper_100">
+                    <div class="cont_wrapper_85 flex">
+                        <div class="width_25">
+                            <img src="img/service_1.png">
+                        </div>
+                        <div class="width_22">
+                            <img src="img/service_2.png">
+                        </div>
+                        <div class="width_22">
+                            <img src="img/service_3.png">
+                        </div>
+                        <div class="width_25">
+                            <img src="img/service_4.png">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="benefits_section">
+                <div class="wrapper_100">
+                    <div class="cont_wrapper_65">
+                        <div class="benefit_content">        
+                            <p class="benefit_p1 font_150">飲食店オーナー様</p>
+                            <p class="benefit_p2 font_200"><img src="img/bnft_txt_highlight.png">してみたくありませんか？</p>
+                        </div>
+                    </div>
+
+                    <div class="cont_wrapper_65 flex mg_btm person_left">
+                        <div class="width_50">
+                            <div class="benefit_item flex">
+                                <div class="width_25">
+                                    <img src="img/check.png">
+                                </div>
+                                <div class="width_75">
+                                    <p class="font_150">感染症対策をしたい<br/>非対面に対応したい</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="width_50">
+                            <div class="benefit_item flex">
+                                <div class="width_25">
+                                    <img src="img/check.png">
+                                </div>
+                                <div class="width_75">
+                                    <p class="font_150">人件費を抑えたい<br/>人員不足を解消したい</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cont_wrapper_65 flex person_right">                       
+
+                        <div class="width_50">
+                            <div class="benefit_item flex">
+                                <div class="width_25">
+                                    <img src="img/check.png">
+                                </div>
+                                <div class="width_75">
+                                    <p class="font_150">業務効率を向上させたい<br/>回転率を改善させたい</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="width_50">
+                            <div class="benefit_item flex last_item">
+                                <div class="width_25">
+                                    <img src="img/check.png">
+                                </div>
+                                <div class="width_75">
+                                    <p class="font_150">セルフレジを導入したい</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Offers Section -->
+            <section class="offer_section">
+                <div class="wrapper_100">
+
+                    <div class="cont_wrapper_75">
+                        <div class="offer_details">
+                            <p class="offer_p font_200">店舗の”こうしたい”を実現できる</p>
+                            <img src="img/offer_details.png">
+                        </div>
+                    </div>
+
+                    <div class="cont_wrapper_75 flex">
+
+                        <div class="width_33">
+                            <img src="img/offer_1.png">
+                        </div>
+                        <div class="width_33">
+                            <img src="img/offer_2.png">
+                        </div>
+                        <div class="width_33">
+                            <img src="img/offer_3.png">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Table -->
+            <section class="tb_section bg_yellow">
+                <div class="tb_main_wrap wrapper_100">
+                    <div class="cont_wrapper_75">   
+
+                        <div class="tb_content">        
+                            <img src="img/tb_tool_tip.png" class="tool_tip">
+                            <p class="tb_emenu_details font_200"><img src="img/logo_emenu_ticket.png">が”こうしたい”を実現できるのか？<br/>導入店舗サービス提供フロー別にオペレーションを解析！</p>
+                            <p class="tb_tag bg_navy font_150">オペレーションパターン別一覧</p>
+                            <img src="img/tb_arrow.png" class="tb_arrow">
+                        </div>
+    
+                        <table class="font_100">
+                            <tbody>
+                                <tr>
+                                    <th class="width_16 bg_ww_grey"><p>オペレーション<br/>パターン</p></th>
+                                    <th class="width_18 bg_ww_grey"><p>サービス提供<br/>フロー例</p></th>
+                                    <th class="width_8 bg_ww_grey"><p>先<br/>注文</p></th>
+                                    <th class="width_8 bg_ww_grey"><p>先<br/>支払い</p></th>
+                                    <th class="width_8 bg_ww_grey"><p>テーブル<br/>注文</p></th>
+                                    <th class="width_8 bg_ww_grey"><p>セルフ<br/>提供</p></th>
+                                    <th class="width_8 bg_ww_grey"><p>スタッフ<br/>提供</p></th>
+                                    <th class="width_8 bg_ww_grey"><p>後<br/>支払い</p></th>
+                                    <th class="width_18 bg_ww_grey"><p>オペレーション<br/>店舗例<br/>＊当社調査による</p></th>
+                                </tr>
+        
+                                <!-- ROW 1 -->
+                                <tr>
+                                    <td class="bg_white tb_img_main">
+                                        <div class="tb_img_wrap">
+                                            <div class="tb_col1">
+                                                <img src="img/tb_person1.png">
+                                            </div>
+                                            <div class="tb_col2">
+                                                <p class="font_125">A</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="bg_white"><p>先注文＆支払い<br/>商品スタッフ提供</p></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"></td>
+                                    <td class="bg_white"></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"></td>
+                                    <td class="bg_white"><p>松屋様、<br/>やよい軒様</p></td>
+                                </tr>
+
+                                <!-- ROW 2 -->
+                                <tr>
+                                    <td class="bg_white tb_img_main">
+                                        <div class="tb_img_wrap">
+                                            <div class="tb_col1">
+                                                <img src="img/tb_person2.png">
+                                            </div>
+                                            <div class="tb_col2">
+                                                <p class="font_125">B</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="bg_white"><p>先注文＆支払い<br/>商品セルフ提供</p></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"></td>
+                                    <td class="bg_white"></td>
+                                    <td class="bg_white"><p>富士そば様</p></td>
+                                </tr>
+
+                                <!-- ROW 3 -->
+                                <tr>
+                                    <td class="bg_white tb_img_main">
+                                        <div class="tb_img_wrap">
+                                            <div class="tb_col1">
+                                                <img src="img/tb_person3.png">
+                                            </div>
+                                            <div class="tb_col2">
+                                                <p class="font_125">C</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="bg_white"><p>テーブル注文・後支払い<br/>商品セルフ提供</p></td>
+                                    <td class="bg_white"></td>
+                                    <td class="bg_white"></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"><p>焼きあご塩ラーメン<br/>たかはし様</p></td>
+                                </tr>
+
+                                <!-- ROW 4 -->
+                                <tr>
+                                    <td class="bg_white tb_img_main">
+                                        <div class="tb_img_wrap">
+                                            <div class="tb_col1">
+                                                <img src="img/tb_person4.png">
+                                            </div>
+                                            <div class="tb_col2">
+                                                <p class="font_125">D</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="bg_white"><p>先注文＆支払い<br/>テイクアウト</p></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"></td>
+                                    <td class="bg_white"></td>
+                                    <td class="bg_white"><p>焼きあご塩ラーメン<br/>たかはし様</p></td>
+                                </tr>
+
+                                <!-- ROW 5 -->
+                                <tr>
+                                    <td class="bg_white tb_last" colspan="2"><p class="font_125">様々なパターンに対応可能！</p></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"><img src="img/tb-circle.png"></td>
+                                    <td class="bg_white"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Instructions -->
+            <div class="width_100" style="background-color: #e6e7ef;">
+                <div class="cont_wrapper_70 ">
+    
+                    <div>
+                        <div class="space_10"></div>
+                        <div class="space_5"></div>
+    
+                        <div class="wrapper_100">
+                            <figure><img class="fix_zoom" src="img/paper 1.png"></figure>
+                        </div>
+    
+                        <div class="space_5"></div>
+    
+    
+                        <div class="wrapper_100">
+                            <figure><img class="fix_zoom" src="img/paper 2.png"></figure>
+                        </div>
+    
+                        <div class="space_5"></div>
+    
+                        <div class="wrapper_100">
+                            <figure><img class="fix_zoom" src="img/paper 3.png"></figure>
+                        </div>
+    
+                        <div class="space_5"></div>
+    
+                        <div class="wrapper_100">
+                            <figure><img class="fix_zoom" src="img/paper 4.png"></figure>
+                        </div>
+    
+                        <div class="space_5"></div>
+    
+                    </div>
+                </div>
+    
+            </div>
+
+            <!-- Further Section -->
+            <section class="wrapper_100 bg_yellow txt_center">
+                <div class="space_5"></div>
+                <div class="space_2"></div>
+                <div class="wrapper_75">
+                    <div class="wrapper_60">
+                        <div class="col2_left bg_img">
+                            <img class="fix_zoom" src="img/e_menuticket.png" alt="">
+                            <div class="width_30 tr_0" style="top: -100%;right: -18%;">
+                                <img class="fix_zoom" src="img/further-img.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col2_right txt_tpad_1">
+                            <p class="txt_left font_150 navy bold"><span class="font_100 navy">&nbsp;の</span>オペレーション例<span class="font_100 navy">詳細を確認</span></p>
+                        </div>
+                        <div class="space_2"></div>
+                        <div class="wrapper_50">
+                            <img class="fix_zoom" src="img/further-img-text.png" alt="">
+                        </div>
+                        <div class="space_2"></div>
+                        <div class="wrapper_25">
+                            <p class="bg_navy white  bold arial font_125">パターンA</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- Order 2 Section -->
+            <section class="wrapper_100 bg_white txt_center order-section">
+                <img class="fix_zoom" src="img/order-before-img.png" alt="">
+                <div class="space_5"></div>
+                    <div class="width_4" style="margin: 0 auto;">
+                        <img class="fix_zoom" src="img/order-header.png" alt="">
+                    </div>
+                    <div class="space_3"></div>
+                    <p class="font_150 navy">店頭のタッチパネルでご注文・お支払い。</p>
+                    <div class="space_1"></div>
+                    <div class="wrapper_40 bg_navy txt_tpad_1 txt_bpad_1">
+                        <p class="font_200 white txt_tpad_05 txt_bpad_05">ご注文ありがとうございました。</p>
+                    </div>
+                <div class="space_5"></div>
+            </section>
+
+            <!-- Comparison -->
+            <section class="comparison_section">              
+                <div class="space_3"></div>
+                <img src="img/bg_comp_top.png" class="fix_zoom">    
+                <div class="wrapper_100 bg_comp_wrap">                    
+                    <div class="cont_wrapper_65">
+                        <div class="space_3"></div>
+                        <div class="space_3"></div>
+                        <figure class="wrapper_100"> <img class="fix_zoom" src="img/2.png"></figure>
+                        <div class="space_3"></div>
+                        <div class="space_3"></div>
+                    </div>
+                </div>                
+                <img src="img/provision-before-img.png" class="fix_zoom">
+                <div class="space_3"></div>
+            </section>
+    
+            <!-- Comparison 2 -->
+            <section class="comparison_section_2 ntspace_3">  
+                <img src="img/bg_comp_top.png" class="fix_zoom">  
+                <div class="wrapper_100 bg_comp_wrap">                    
+                    <div class="cont_wrapper_65">
+                        <div class="space_3"></div>
+                        <div class="space_3"></div>
+                        <figure class="wrapper_100 txt_lpad_1"> <img class="fix_zoom" src="img/3.png"></figure>
+                        <div class="space_3"></div>
+                        <div class="space_3"></div>
+                    </div>
+                </div>                
+                <img src="img/provision-before-img.png" class="fix_zoom">
+                <div class="space_3"></div>
+            </section>
+
+            <!-- Provision Section-->
+            <section class="wrapper_100 bg_white txt_center provision_section">
+                <div class="space_5"></div>
+                <div class="cont_wrapper_75 bg_base1">
+                    <div class="space_5"></div>
+                    <div class="wrapper_15">
+                        <img class="fix_zoom" src="img/provision-4-img.png" alt="">
+                    </div>
+                    <div class="space_5"></div>
+                    <p class="font_125 wrapper_25 bg_navy white">スタッフオペレーション</p>
+                    <div class="space_3"></div>
+                    <p class="font_200 navy p_after_before wrapper_60"> &nbsp;&nbsp; 100番さん、A定食できました！&nbsp;&nbsp;</p>
+                    <div class="space_1"></div>
+                    <div class="wrapper_35">
+                        <img class="fix_zoom" src="img/provision-food-img-with-price.png" alt="">
+                    </div>
+                    <div class="space_2"></div>
+                    <p class="font_125 navy bold">調理伝票にかかれている注文番号から <br>
+                        卓番を確認し、料理を持って行く。</p>
+                    <div class="space_2"></div>
+                    <div class="width_8" style="margin: 0 auto;">
+                        <img class="fix_zoom" src="img/provision-arrow-down-img.png" alt="">
+                    </div>
+                    <div class="space_2"></div>
+                    <p class="font_200 navy p_after_before wrapper_60"> &nbsp;&nbsp; お待たせいたしました！&nbsp;</p>
+                    <div class="space_2"></div>
+                    <div class="wrapper_35">
+                        <img class="fix_zoom" src="img/provision-food-img-no-price.png" alt="">
+                    </div>
+                    <div class="space_3"></div>
+                    <p class="font_200 bold navy p_after_yellow">配膳ができたら <br>
+                        オペレーションは完了です！</p>
+                    <div class="space_5"></div>
+                </div>
+                <div class="space_5"></div>
+                <div class="wrapper_50">
+                    <img class="fix_zoom" src="img/provision-text-head.png" alt="">
+                </div>
+                <div class="space_3"></div>
+                <div class="wrapper_25">
+                    <img class="fix_zoom" src="img/provision-elapay.png" alt="">
+                </div>
+                <div class="space_1"></div>
+                <div class="wrapper_75">
+                    <img class="fix_zoom" src="img/provision-client-logo.png" alt="">
+                </div>
+                <div class="space_5"></div>
+                <div class="wrapper_75 bg_img">
+                    <div class="width_36 bg_yellow txt_tpad_1 txt_bpad_1">
+                        <p class="font_150 navy">支払い方法を選択</p>
+                    </div>
+                    <div class="space_2"></div>
+                    <p class="font_125 bold navy txt_left">A QRコードでお支払い <br>
+                        B 現金かクレカでお支払い</p>
+                    <div class="space_4"></div>
+                    <p class="font_125 bold navy txt_left">A：QRコードの場合 <br>
+                        QRコードをカメラから読み取ってください</p>
+                    <div class="space_2"></div>
+                    <p class="font_125 bold navy txt_left">B：現金・クレジットカードの場合 <br>
+                        伝票をお取りになりセルフレジにてお支払いください。</p>
+                    <div class="width_55 t50_r0 rspace_2">
+                        <img class="fix_zoom" src="img/provision-layer-7.png" alt="">
+                    </div>
+                </div>
+                <div class="space_5"></div>
+                <div class="space_3"></div>
+            </section>
+
+            <!-- Store Location -->
+            <section class="store_section">
+                <div class="wrapper_100">
+                    <div class="cont_wrapper_75">
+                        <div class="store_content">
+                            <img src="img/store_txt.png" class="store_txt">
+                            <p class="font_200">導入店舗様に<img src="img/logo_emenu_ticket.png">を<br/>導入した効果を確認しました。</p>
+                        </div>
+
+                        <div class="store_item_1">
+                            <img src="img/store_tag_1.png" class="tag">
+
+                            <div class="cont_wrapper_100 flex">
+                                <div class="width_45">
+                                    <img src="img/store_1.png">
+                                </div>
+                                <div class="width_55">
+                                    <p>ホールスタッフ、ゼロ。<br/>
+                                        回転率が上がり、トッピングの出数が伸びた。<br/>
+                                        12卓に注文端末を設置しセルフレジにする事により、<br/>ホールスタッフ０を実現。</p>
+                                    <p>注文時間が短縮されたため同時の注文数が多くなったもの<br/>の、接客の必要が無くなり、調理に集中できるようになっ<br/>たことで、キッチン人数そのままで提供時間を短縮できる<br/>ように。</p>
+                                    <p>結果としてテーブル回転率向上が実現。導入前と比べると<br/>激的にトッピングの出数と追加注文を増加させることに成<br/>功しました。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="store_item_2">
+                            <img src="img/store_tag_2.png" class="tag">
+
+                            <div class="cont_wrapper_100 flex">
+                                <div class="width_55">
+                                    <p>口頭確認していたスタッフの手間が激減、<br/>
+                                        さらにトッピング出数が倍に！<br/>
+                                        スタッフが口頭で確認していた辛さ、痺れ、苦手抜き等が<br/>自動化できるようになり、調理スピードがぐっとはやく。<br/>
+                                        さらに、トッピングの出数も倍程度に増加！</p>
+                                    <p>券売機では出来なかった無料商品の発券ができるようにな<br/>り、販促企画に活用中です。</p>
+                                </div>
+                                <div class="width_45">
+                                    <img src="img/store_2.png">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="store_item_3">
+                            <img src="img/store_tag_3.png" class="tag">
+
+                            <div class="cont_wrapper_100 flex">
+                                <div class="width_45">
+                                    <img src="img/store_3.png">
+                                </div>
+                                <div class="width_55">
+                                    <p>セルフレジでオーダーと会計がスムーズに！<br/>
+                                        辛さの選択もお客様自身で選んでいただけるように画面を<br/>
+                                        カスタマイズし、スムーズなオペレーションが実現できま<br/>した！</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Q&A Section -->
+            <section class="wrapper_100 bg_yellow">
+                <div class="space_2"></div>
+                <div class="space_5"></div>
+                <div class="cont_wrapper_75">
+                    <p class="font_300 bold arial txt_center navy">Q&A</p>
+                    <div class="space_2"></div>
+                    <p class="bg_navy white font_200 txt_center txt_tpad_1 txt_bpad_1">使い方について</p>
+                    <div class="space_3"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">後払いセルフレジとして使用したいのですが、後会計にも変更可能でしょうか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">後会計にも設定変更できます。<br>
+                                    全卓にタッチパネルを設置し、会計伝票にQRコードを印字する事によりセルフレジとしてお使いいただくことも可能です。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_2"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">セミセルフレジとしての使用は可能ですか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">セミセルフレジとしてもお使いいただけます。<br>
+                                    e-menu Ticketは、券売機として、後払いセルフレジとして、そしてセミセルフレジとして、3WAYで使用できる柔軟な対応力が持ち味です。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_2"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">後払いセルフレジとして使用したいのですが、後会計にも変更可能でしょうか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">後会計にも設定変更できます。<br>
+                                    全卓にタッチパネルを設置し、会計伝票にQRコードを印字する事によりセルフレジとしてお使いいただくことも可能です。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_2"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">個別会計は対応可能でしょうか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">個別会計ももちろん、お客様のもとで完結できる仕様になっております。<br>
+                                    操作はまず、個別会計ボタンを押していただき、次に個別に払う商品を選択するという２ＳＴＥＰでカンタンなものです。 どんな年代の方でも使いやすいデザインです。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_2"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">クーポンの読み取りはできますか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">クーポンの読み取りも対応しています。<br>
+                                    販促企画にぜひご活用ください。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_2"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">お持ち帰り機能はついていますか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">お持ち帰り機能にも対応しています。<br>
+                                    カンタンに設定可能ですので、今後、テイクアウト事業への展開をお考えのお店にもオススメです。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_5"></div>
+                    <p class="bg_navy white font_150 txt_center txt_tpad_1 txt_bpad_1">費用について</p>
+                    <div class="space_3"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">補助金・助成金申請を検討しています。サポートしていただけますか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">はい、弊社では導入に伴う補助金・助成金の申請サポートもおこなっております。<br>
+                                    多くの実績があるためご安心してお任せください。<br>
+                                    詳しくはお問い合わせ下さい。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_2"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">導入コストはどのくらいですか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">ランチタイムの繁忙期によく見かける、券売機前のお客様の行列からお分かりいただけるように、一台の券売機だけで行列を消化するのは、とてもできるものではありません。<br>
+                                    「並んでいるから、他のお店に行こう」と、せっかく来ていただいたお客様も他店に流れてしまい、機会損失を生んでしまっていることが考えられます。<br>
+                                    現状の券売機の問題点を踏まえ、e-menu Ticketでは、追加注文パネルの低価格化を推し進めました。<br>
+                                    通常の券売機だと２台導入するのに300万円ほどしますが、e-menu Ticketなら追加費用は29,800円、導入コストが2分の1に抑えられます。<br>
+                                    ぜひ、２枚ご導入いただき、行列消化にお役立ていただきたいと思います。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_5"></div>
+                    <p class="bg_navy white font_150 txt_center txt_tpad_1 txt_bpad_1">仕様について</p>
+                    <div class="space_3"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">障害時のサポートはどうなっていますか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">全国24拠点・24時間365日対応で、全国のチェーン店様の店舗をサポートしています。<br>
+                                    サーバーやタッチパネルが自然に故障する事はほとんどありません。 <br>
+                                    万が一、システム的な障害が発生した際には、店舗に設置されているサーバーに入り、不具合解消</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_2"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">クラウドサービスのオーダーシステムとの違いは何ですか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">クラウドはインターネット上にデータを置くので、インターネット不通時やAWSといった、世界的なサーバーダウン時には使用ができなくなる危険性があります。そのためクラウドオーダーシステムは、頻繁に使う飲食店システムには不向きです。<br>
+                                    これに対し、e-menu Ticket はインターネットから隔離された店舗内だけで使えるシステムを採用しているため、もしもの時にも使えなくなる恐れはありません。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_2"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">POSレジやオーダーシステムの画面をiPadで対応することに問題はないのでしょうか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">iPadは業務用に作られていないため、落とすと割れたり過充電を続けると電池が膨張したり、アップグレードが頻繁にあるので利用頻度の高い繁盛店には不向きと言えます。<br>
+                                    これに対し、e-menu Ticketは、オーダーシステムの端末において、独自にカスタマイズしたLenovo製のアンドロイド端末を推奨しています。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_2"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">lenovo端末の故障率はどのくらいですか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">前年度の故障率は、弊社での実績で1.1％台です。<br>
+                                    世界シェア1位を誇るlenovoのタッチパネルは、国内でも官公庁・大手企業が導入していることからも裏付けられるように、故障が極めて少ない非常に安定した端末であると言えます。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_2"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">タッチパネルのバッテリーの寿命は何年ですか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">液晶パネルの寿命自体が3年なので、バッテリーも3年使えるように設計されています。<br>
+                                    3年のうちにバッテリー交換は発生いたしません。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_2"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">硬貨・紙幣の収容枚数は？v</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">硬貨は、500円-105枚・100円-160枚・50円-120枚・10円-160枚・5円-120枚・1円-160枚 <br>
+                                    紙幣は、1万円-100枚・ 5千円-100枚・ 千円-200枚<br>
+                                    収容することができます。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_2"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">入金された硬貨や紙幣はリサイクル可能ですか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">可能です。</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space_2"></div>
+                    <div>
+                        <ul class="flex flex_center wrapper_100">
+                            <li class="width_5 txt_center">
+                                <p class="font_200 arial bg_navy cercle_radius white bold">Q</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_150 bold navy txt_lpad_1 txt_rpad_1">インバウンド対応はしていますか？</p>
+                            </li>
+                        </ul>
+                        <ul class="flex wrapper_100">
+                            <li class="width_5 txt_center txt_tpad_1">
+                                <p class="font_200 arial bg_white cercle_radius navy bold">A</p>
+                            </li>
+                            <li class="width_94">
+                                <p class="font_100 navy txt_tpad_1 txt_bpad_1 txt_lpad_1 txt_rpad_1">英語対応が可能な上、一目で「どんな食べ物なのか」が分かりやすい画面レイアウトなので、外国の方も説明いらずでお使いいただけます。また、アレルギー表記やヴィ―ガン向けなど、確認事項やおすすめ事項も画面に落とし込むことができるので、お客様から呼ばれて接客対応する必要もありません。</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="space_5"></div>
+                <div class="space_2"></div>
+            </section>
+
+            <!-- Image Ad -->
+            <section class="wrapper_100 bg_base1">
+                <div class="space_5"></div>
+                <div class="space_2"></div>
+                <div class="wrapper_60">
+                    <img class="fix_zoom" src="img/next-to-qa-img.png" alt="">
+                </div>
+                <div class="space_5"></div>
+                <div class="space_2"></div>
+            </section>
+
+        </main>
+
+        <footer>
+            <section class="wrapper_100 bg_base1">
+                <div class="u_line_m_navy"></div>
+                <p class="txt_tpad_1 txt_bpad_1 font_70 txt_center ">Copyright©Transit Co., Ltd. All rights reserved.</p>
+                <div class="u_line_m_navy"></div>
+            </section>
+        </footer>
+    </body>
+
+    <script type="text/javascript">
+        window.addEventListener('load', function() { 
+            // 通常
+            $('.rollover').easyRollover();
+    
+            // サフィックス
+            $('.rollover-suffix').easyRollover({
+                suffix: '_off.',
+                suffix_replace: '_on.'
+            });
+    
+            // 透過フェードするだけのロールオーバー
+            $('.rollover-fade1').easyRollover({
+                suffix: false,
+                transition: 'fade',
+                opacity: 0.2,
+                duration: 400
+            });
+    
+            // フェードして切り替わるロールオーバー
+            $('.rollover-fade2').easyRollover({
+                transition: 'fade',
+                duration: 1000,
+                easing: 'swing'
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function(){
+    $('.menu > ul > li > ul:not(:has(ul))').addClass('normal-sub');
+    $(".menu > ul > li").hover(
+        function (e) {
+        if ($(window).width() > 1050) {
+            $(this).children("ul").fadeIn(150);
+            e.preventDefault();
+        }
+        }, function (e) {
+        if ($(window).width() > 1050) {
+            $(this).children("ul").fadeOut(150);
+            e.preventDefault();
+        }
+        }
+    );
+    $(".menu > ul > li").click(function() {
+        var thisMenu = $(this).children("ul");
+        var prevState = thisMenu.css('display');
+        $(".menu > ul > li > ul").fadeOut();
+        if ($(window).width() < 1051) {
+        if(prevState !== 'block')
+        thisMenu.fadeIn(150);
+        }
     });
-</script>
-<style>
-.fp-slidesNav.fp-bottom{
-bottom: 6vh !important;
-left: 47.5vw !important;
-}
-</style>
-<script type="text/javascript">
-//ローディングアニメの設定
-$(function(){
-	var loader = $('.loader-wrap');
-	$(window).on('load',function(){
-		loader.fadeOut();
-	});
-});
-</script>
+    $(".navmenu_1 li a").click(function () {
+        $('.Toggle').toggleClass('active');
+        $(".menu-container").toggleClass('open');
+        $(".menu > ul").toggleClass('show-on-mobile');
+    });
+    $(".toform a").click(function () {
+        $('.Toggle').toggleClass('active');
+        $(".menu-container").toggleClass('open');
+        $(".menu > ul").toggleClass('show-on-mobile');
+    });
+    $(".Toggle").click(function (e) {
+        $('.Toggle').toggleClass('active');
+        $(".menu-container").toggleClass('open');
+        $(".menu > ul").toggleClass('show-on-mobile');
+        e.preventDefault();
+    });
+    });
+    </script>
+
+    <script type="text/javascript">
+        window.addEventListener('load', function(){ 
+            $('.navmenu_1 li a').click(function(){
+            $(this).toggleClass('open');
+                if ($(this).hasClass('open')) {
+                    $(this).next('.navmenu_2').slideDown();
+                    $('.navmenu_1 li a').not($(this)).removeClass('open');
+                    $('.navmenu_2').not($(this).next('.navmenu_2')).slideUp();
+                } else {
+                    $(this).removeClass('open'); //クラスを外す
+                    $(this).next('.navmenu_2').slideUp();
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+    //fullpage.jsの設定
+        var myFullpage = new fullpage('#fullpage', {
+        controlArrows: true,
+        verticalCentered: true,
+        resize: false,
+        scrollingSpeed: 700,
+        loopTop: true,
+        loopBottom: true,
+        loopHorizontal: true,
+        autoScrolling: true,
+        scrollBar: true,
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', 'lastPage'],
+        menu: '#menu',
+        navigation: true,
+        navigationPosition: 'right',
+        navigationTooltips:  [],
+        showActiveTooltip: false,
+        slidesNavigation: true
+        });
+    </script>
+    <style>
+    .fp-slidesNav.fp-bottom{
+    bottom: 6vh !important;
+    left: 47.5vw !important;
+    }
+    </style>
+    <script type="text/javascript">
+    //ローディングアニメの設定
+    $(function(){
+        var loader = $('.loader-wrap');
+        $(window).on('load',function(){
+            loader.fadeOut();
+        });
+    });
+    </script>
 </html>
