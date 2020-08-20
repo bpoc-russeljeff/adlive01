@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-  var base1 = '#081461';  // 新しく設定したい色①  ※呼び出しclassはbase1 bg_base1 u_line_base1 box_t_base1 box_m_base1
+  var base1 = '#e6e7ef';  // 新しく設定したい色①  ※呼び出しclassはbase1 bg_base1 u_line_base1 box_t_base1 box_m_base1
   var base2 = '#ffcc22';  // 新しく設定したい色②  ※呼び出しclassはbase2 bg_base2 u_line_base2 box_t_base2 box_m_base2
   var base3 = '#ffffff';  // 新しく設定したい色③  ※呼び出しclassはbase3 bg_base3 u_line_base3 box_t_base3 box_m_base3
   var base4 = '#ffffff';  // 新しく設定したい色④  ※呼び出しclassはbase4 bg_base4 u_line_base4 box_t_base4 box_m_base4
